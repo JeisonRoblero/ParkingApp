@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="429.0" prefWidth="466.0" style="-fx-background-color: 1d3557;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="466.0" style="-fx-background-color: #006d77;">
+        <items>
+            <Button mnemonicParsing="false" onAction="#mostrarInicio" style="-fx-background-color: #1d3557;" text="Inicio" textFill="WHITE" />
+          <Button mnemonicParsing="false" onAction="#mostrarIngreso" style="-fx-background-color: #a8dadc;" text="Ingresar Vehiculo" />
+            <Button mnemonicParsing="false" onAction="#mostrarEgreso" style="-fx-background-color: #a8dadc;" text="Egrasar Vehiculo" />
+            <Button mnemonicParsing="false" onAction="#mostrarConfiguraciones" style="-fx-background-color: #a8dadc;" text="Configuraciones" />
+            <Button mnemonicParsing="false" onAction="#salir" style="-fx-background-color: #e63946;" text="Salir" />
+        </items>
+      </ToolBar>
+      <Pane fx:id="homePane" layoutY="40.0" prefHeight="387.0" prefWidth="466.0" style="-fx-background-color: #f1faee;">
+         <children>
+            <Label fx:id="homeLabel" contentDisplay="CENTER" layoutX="20.0" layoutY="3.0" prefHeight="373.0" prefWidth="425.0" text="Bienvenido" textFill="#1d3557" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="ingresoPane" layoutY="40.0" prefHeight="387.0" prefWidth="466.0" style="-fx-background-color: #f1faee;" visible="false">
+         <children>
+            <Label layoutX="34.0" layoutY="66.0" text="Tipo Vehiculo:">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboTipoVehiculo" layoutX="143.0" layoutY="65.0" prefWidth="150.0" promptText="Seleccionar" />
+            <Button layoutX="21.0" layoutY="347.0" mnemonicParsing="false" onAction="#ingresarVehiculo" prefHeight="26.0" prefWidth="425.0" style="-fx-background-color: #1d3557;" text="Ingresar Vehiculo" textFill="WHITE" />
+            <Label layoutX="91.0" layoutY="102.0" text="Placa:">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldPlaca" layoutX="143.0" layoutY="100.0" />
+            <Label fx:id="labelErrorIngresoVehiculo" layoutX="66.0" layoutY="126.0" prefHeight="141.0" prefWidth="313.0" text="..." textFill="#e63946" visible="false" wrapText="true">
+               <font>
+                  <Font name="Arial" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="126.0" layoutY="14.0" text="Ingresar Vehiculo" textFill="#1d3557">
+               <font>
+                  <Font name="Arial Black" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="egresoPane" layoutY="40.0" prefHeight="387.0" prefWidth="466.0" style="-fx-background-color: #f1faee;" visible="false">
+         <children>
+            <Label layoutX="122.0" layoutY="14.0" text="Egreso de Vehiculo" textFill="#1d3557">
+               <font>
+                  <Font name="Arial Black" size="19.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnEgresarVehiculo" disable="true" layoutX="21.0" layoutY="347.0" mnemonicParsing="false" onAction="#egresarVehiculo" prefHeight="26.0" prefWidth="425.0" style="-fx-background-color: #1d3557;" text="Egresar Vehiculo" textFill="WHITE" />
+            <Label layoutX="35.0" layoutY="62.0" text="Buscar Placa:">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldPlacaEgreso" layoutX="143.0" layoutY="60.0" />
+            <Label fx:id="labelErrorEgresoVehiculo" layoutX="24.0" layoutY="93.0" prefHeight="74.0" prefWidth="431.0" text="..." textFill="#e63946" visible="false" wrapText="true">
+               <font>
+                  <Font name="Arial" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="egresoLabel" contentDisplay="CENTER" layoutX="18.0" layoutY="180.0" prefHeight="131.0" prefWidth="431.0" text="..." textFill="#1d3557" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="312.0" layoutY="58.0" mnemonicParsing="false" onAction="#buscarVehiculo" prefHeight="26.0" prefWidth="140.0" style="-fx-background-color: #1d3557;" text="Buscar" textFill="WHITE" />
+            <Label layoutX="165.0" layoutY="313.0" text="Nit:">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldNit" disable="true" layoutX="196.0" layoutY="311.0" text="CF" />
+            <Button fx:id="btnPagar" layoutX="21.0" layoutY="347.0" mnemonicParsing="false" onAction="#pagarFactura" prefHeight="26.0" prefWidth="425.0" style="-fx-background-color: #1d3557;" text="Pagar" textFill="WHITE" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="configuracionPane" layoutY="40.0" prefHeight="387.0" prefWidth="466.0" style="-fx-background-color: #f1faee;" visible="false">
+         <children>
+            <Label layoutX="19.0" layoutY="14.0" text="Automovil" textFill="#1d3557">
+               <font>
+                  <Font name="Arial Black" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="42.0" text="Espacios">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="autoEspacios" layoutX="20.0" layoutY="65.0" prefHeight="26.0" prefWidth="125.0" />
+            <TextField fx:id="autoPrecio" layoutX="162.0" layoutY="65.0" prefHeight="26.0" prefWidth="125.0" />
+            <Label layoutX="162.0" layoutY="42.0" text="Precio">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="318.0" layoutY="255.0" text="Tarifa en Segundos">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="72.0" layoutY="109.0" prefWidth="200.0" />
+            <Label layoutX="24.0" layoutY="119.0" text="Motocicleta" textFill="#1d3557">
+               <font>
+                  <Font name="Arial Black" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="147.0" text="Espacios">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="motoEspacios" layoutX="25.0" layoutY="170.0" prefHeight="26.0" prefWidth="125.0" />
+            <TextField fx:id="motoPrecio" layoutX="167.0" layoutY="170.0" prefHeight="26.0" prefWidth="125.0" />
+            <Label layoutX="167.0" layoutY="147.0" text="Precio">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="80.0" layoutY="222.0" prefWidth="200.0" />
+            <Label layoutX="28.0" layoutY="238.0" text="Camion" textFill="#1d3557">
+               <font>
+                  <Font name="Arial Black" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="266.0" text="Espacios">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="camionEspacios" layoutX="29.0" layoutY="289.0" prefHeight="26.0" prefWidth="125.0" />
+            <TextField fx:id="camionPrecio" layoutX="171.0" layoutY="289.0" prefHeight="26.0" prefWidth="125.0" />
+            <Label layoutX="171.0" layoutY="266.0" text="Precio">
+               <font>
+                  <Font name="Arial Hebrew" size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="312.0" layoutY="30.0" orientation="VERTICAL" prefHeight="289.0" prefWidth="6.0" />
+            <TextField fx:id="tiempoTarifa" layoutX="352.0" layoutY="289.0" prefHeight="26.0" prefWidth="88.0" />
+            <Label fx:id="labelErrorConfiguracion" layoutX="318.0" layoutY="30.0" prefHeight="159.0" prefWidth="140.0" text="..." textFill="#e63946" visible="false" wrapText="true">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="28.0" layoutY="340.0" mnemonicParsing="false" onAction="#guardarConfiguracion" prefHeight="26.0" prefWidth="425.0" style="-fx-background-color: #1d3557;" text="Guardar" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
